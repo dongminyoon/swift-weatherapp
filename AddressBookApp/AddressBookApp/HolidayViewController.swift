@@ -37,9 +37,7 @@ extension HolidayViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue", for: indexPath) as! HolidayTableViewCell
         
         dateEvent?.access { information in
-            cell.dateLabel.text = information[indexPath.row]["date"]
-            cell.subtitleLabel.text = information[indexPath.row]["subtitle"]
-            cell.chooseImage(name: information[indexPath.row]["image"])
+            cell.set(inform: information[indexPath.row])
         }
         return cell
     }
