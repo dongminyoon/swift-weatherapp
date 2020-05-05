@@ -12,6 +12,8 @@
 
 <br>
 
+<br>
+
 **UITableViewController**
 
  이번 단계에서는 UITableView의 `Static Cell` 를 이용하여 TableView를 디자인해보았다.
