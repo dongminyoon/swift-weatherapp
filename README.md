@@ -8,9 +8,9 @@
 * UITableViewController를 이용해 Static Cell을 디자인한다.
 * Date() 타입을 사용한다.
 
+<br>
 
-
-
+<br>
 
 **UITableViewController**
 
@@ -25,11 +25,11 @@
 * **Dynamic** : 말 그대로 동적인 테이블 뷰 구현방식이다. 보통 테이블 뷰의 요청에 응답하는 방식으로 표현된다. 코드로 구현한다 보통 DataSource, Delegate 등을 상속받아 구현한다.
 * **Static Cells** : `TableViewController`를 이용하는 경우에만 만들 수 있다. 여기에 `Static Cell` 모드를 선택한 후 코드로 구현할 경우 적용되지 않는다. 보통 스토리보드로 작업을 하게 된다.
 
-
+<br>
 
  이번 단계에서는 보통 `MainStoryBoard`를 활용하여 구현하였다.
 
-
+<br>
 
 **Date타입**
 
@@ -56,7 +56,7 @@ print(stringTime)							// 오후 4시 50분
 // mm분은 현재 분을 표시
 ```
 
-
+<br>
 
 **실행화면**
 
@@ -73,7 +73,7 @@ print(stringTime)							// 오후 4시 50분
 * `UITableView` 의 `Dynamic` Content를 이용하여 TableView를 디자인한다.
 * `JSONSerialization` 을 활용하여 JSON 데이터를 SWIFT 데이터 형식으로 변환한다.
 
-
+<br>
 
 **TableView Dynamic**
 
@@ -81,7 +81,7 @@ print(stringTime)							// 오후 4시 50분
 
  이렇게 동작하기 위해 세팅해줘야하는 몇가지 사항들이 있다.
 
-
+<br>
 
 1. 스토리보드에 UITableViewController가 아닌 UIViewController를 생성해준다.
 
@@ -141,7 +141,7 @@ if let reuseCell = tableView.dequeueReusableCell(withIdentifier: "reuseQueue") {
 }
 ```
 
-
+<br>
 
 5. `DataSource`를 `TableView`에 연결시켜준다.
 
@@ -159,9 +159,9 @@ extension ViewController: UITableViewDataSource { }
 
 ```
 
+<br>
 
-
-
+<br>
 
 **JSON Serialization**
 
@@ -187,9 +187,7 @@ guard let data = jsonData else { return }
 guard let convertedData = try? JSONSerialization.jsonObject(with: data, options: []) as? [Dictionary<String, String>] else { return }
 ```
 
-
-
-
+<br>
 
 **실행화면**
 
@@ -209,9 +207,9 @@ guard let convertedData = try? JSONSerialization.jsonObject(with: data, options:
 * Info.plist에서 http접근을 허용하고 URL로부터 text를 읽어온다.
 * Cell의 높이를 지정하는 방법을 안다.
 
+<br>
 
-
-
+<br>
 
 **Custom Cell 만들기**
 
@@ -279,7 +277,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 ```
 
-
+<br>
 
 **Cell의 높이 지정해주기**
 
@@ -288,7 +286,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 1. 내용에 상관없이 고정으로 지정
 2. 내용에 따라 Cell의 높이가 Dynamic하게 바뀐다.
 
-
+<br>
 
  첫번째 방법
 
@@ -313,7 +311,7 @@ extension HolidayViewController: UITableViewDelegate {
 }
 ```
 
-
+<br>
 
  두번째 방법
 
@@ -337,9 +335,9 @@ func tableView(_ tableView: UITableView, estimatedHeight indexPath: IndexPath) -
 }
 ```
 
+<br>
 
-
-
+<br>
 
 **URL 접속 앱 권한 허용 info.plist 수정**
 
@@ -349,7 +347,7 @@ func tableView(_ tableView: UITableView, estimatedHeight indexPath: IndexPath) -
 
  https로 부터 정보를 읽어오기 위해 다음과 같은 설정을 바꾸어준다.
 
-
+<br>
 
 **실행화면**
 
